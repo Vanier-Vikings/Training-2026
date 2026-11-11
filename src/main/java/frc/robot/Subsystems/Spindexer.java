@@ -2,6 +2,7 @@ package frc.robot.Subsystems;
 
 import frc.robot.Subsystems.SpindexerConstants;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -26,12 +27,21 @@ public class Spindexer extends SubsystemBase {
     //Change ids later 
     private static SparkMax spinMax =  new SparkMax(SpindexerConstants.spindexerMotorID, SparkLowLevel.MotorType.kBrushless);
     private SparkMaxConfig mMaxConfig;
-    
+    private double m_voltage = SpindexerConstants.m_voltage;
 
+    
     public Spindexer() {
-        MotorConfig sparkMotorConfig = new MotorConfig();
         mMaxConfig = new SparkMaxConfig();
-        spinMax.configure(SparkMaxConfig.mMaxConfig, ResetMode.kNoResetSafeParameters, PersistMode.kNoPersistParameters);     
+        mMaxConfig
+        //set current limit to 40 amps
+            .smartCurrentLimit(40)
+            .idleMode(IdleMode.kBrake)
+            .inverted(false);
+        spinMax.configure(mMaxConfig, ResetMode.kNoResetSafeParameters, PersistMode.kNoPersistParameters);   
+        
+            SmartDashboard.setDefaultNumber("Target Position", 0);
+            SmartDashboard.setDefaultNumber("Target Voltage", m_voltage);
+            SmartDashboard.setDefaultBoolean("Control Mode", false);
             
             
     }  
@@ -48,7 +58,5 @@ public class Spindexer extends SubsystemBase {
     public Command mrDoungCommand (double m_voltage) {
         return this.startEnd(() -> runSpindexer(m_voltage), () -> stopSpindexer());
     } 
-    
-    
 
 }
