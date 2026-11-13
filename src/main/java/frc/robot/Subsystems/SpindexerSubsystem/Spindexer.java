@@ -1,6 +1,6 @@
-package frc.robot.Subsystems;
+package frc.robot.Subsystems.SpindexerSubsystem;
 
-import frc.robot.Subsystems.SpindexerConstants;
+import frc.robot.Subsystems.SpindexerSubsystem.SpindexerConstants;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -55,8 +55,8 @@ public class Spindexer extends SubsystemBase {
         spinMax.setVoltage(0.0);
     }
 
-    public Command mrDoungCommand (double m_voltage) {
+    public Command spindexerCommand () {
         return this.startEnd(() -> runSpindexer(m_voltage), () -> stopSpindexer());
     } 
-
+    
 }
