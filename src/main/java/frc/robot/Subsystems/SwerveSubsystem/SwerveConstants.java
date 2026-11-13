@@ -16,7 +16,6 @@ import edu.wpi.first.math.util.Units;
 
 public final class SwerveConstants {
 
-    public static class ConfigConstants{
-        public static final Pose2d startingPose = new Pose2d(0, 0, Rotation2d.kZero);
-    }
+    public static void Config(){   }
+    
 }
