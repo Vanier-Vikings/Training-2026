@@ -14,12 +14,15 @@ import frc.robot.Subsystems.SwerveSubsystem.Swerve;
 import swervelib.SwerveInputStream;
 import frc.robot.Subsystems.SpindexerSubsystem.Spindexer;
 import frc.robot.Subsystems.SpindexerSubsystem.SpindexerConstants;
+import frc.robot.Subsystems.ShooterSubsystem.Shooter;
+import frc.robot.Subsystems.ShooterSubsystem.ShooterConstants;
 
 
 public class RobotContainer {
 
   private final Swerve m_swerve = new Swerve();
   private final Spindexer m_spindexer = new Spindexer();
+  private final Shooter m_Shooter = new Shooter(); 
 
   private final SendableChooser<Command> autoChooser;
 
@@ -46,7 +49,8 @@ public class RobotContainer {
   }
 
   private void configureBindings() {
-      controller.leftBumper().toggleOnTrue(m_spindexer.spindexerCommand());
+      controller.leftBumper()
+      .toggleOnTrue(m_spindexer.spindexerCommand()toggleOnTrue(m_Shooter.ShooterCommand()));
 
   }
 

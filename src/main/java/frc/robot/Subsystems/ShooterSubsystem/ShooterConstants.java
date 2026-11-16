@@ -9,7 +9,7 @@ public class ShooterConstants {
     public static final double kFeederI = 0.0;
     public static final double kFeederD = 0.0;
 
-    public static final double kHoodP = 0.0; 
+    public static final double kHoodP = 0.01; 
     public static final double kHoodI = 0.0;
     public static final double kHoodD = 0.0;
     public static final double kHoodS = 0.0;
@@ -17,6 +17,9 @@ public class ShooterConstants {
     public static final double kHoodA = 0.0;
     public static final double kHoodG = 0.0;
 
-    public static final double hoodCurrentLimit = 0.0;
-    public static final double shooterCurrentLimit = 0.0;
+    public static final double hoodCurrentLimit = 40.0;
+    public static final double shooterCurrentLimit = 40.0;
+
+    public static final double targetRPS = 0.0;
+    public static final double targetV = 0.0; 
 }
