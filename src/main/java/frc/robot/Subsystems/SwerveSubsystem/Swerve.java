@@ -68,8 +68,8 @@ public class Swerve extends SubsystemBase
     var cfg = new SwerveDriveConfig()
         .withStartingPose(new Pose2d(3, 3, Rotation2d.kZero))
         .withSubsystem(this)
-        .withTranslationController(new PIDController(4, 0, 0))
-        .withRotationController(new PIDController(1, 0, 0))
+        .withTranslationController(SwerveConstants.translationController)
+        .withRotationController(SwerveConstants.rotationController)
         .withTelemetry("swerve", new SwerveDriveTelemetryConfig(TelemetryVerbosity.HIGH));
 
     SwerveParser.parse(new File(Filesystem.getDeployDirectory(), "swerve/base"));

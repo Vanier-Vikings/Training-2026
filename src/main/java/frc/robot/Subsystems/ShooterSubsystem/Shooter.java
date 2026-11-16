@@ -5,6 +5,7 @@ import edu.wpi.first.units.measure.Velocity;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.StartEndCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -100,16 +101,16 @@ public class Shooter {
      }
 
      public void stopShooter() {
-            feederMotor.setVoltage(0);
-            hoodMotor.setControl(m_request.withVelocity(0));
+        feederMotor.setVoltage(0);
+        hoodMotor.setControl(m_request.withVelocity(0));
      }
 
      public void runShooter() {
-            feederMotor.setVoltage(ShooterConstants.targetV);
-            hoodMotor.setControl(m_request.withVelocity(ShooterConstants.targetRPS));
+        feederMotor.setVoltage(ShooterConstants.targetV);
+        hoodMotor.setControl(m_request.withVelocity(ShooterConstants.targetRPS));
      }
 
      public Command ShooterCommand() {
-           return this.startEnd(() -> runShooter(), () -> stopShooter());
+        return Commands.startEnd(() -> runShooter(), () -> stopShooter());
      }
 }

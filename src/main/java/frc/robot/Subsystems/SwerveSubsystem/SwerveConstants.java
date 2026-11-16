@@ -17,6 +17,6 @@ public final class SwerveConstants {
     public static final double kPModuleDriveController = 0; // Starts at zero; increase later when tuning drive responsiveness.
     public static final double kMaxSpeedMetersPerSecond = 10.0;
 
-    public static final PIDController translationController = new PIDController(0, 0, 0);
-    public static final PIDController rotationController = new PIDController(0, 0, 0);
+    public static final PIDController translationController = new PIDController(4, 0, 0);
+    public static final PIDController rotationController = new PIDController(1, 0, 0);
 }
