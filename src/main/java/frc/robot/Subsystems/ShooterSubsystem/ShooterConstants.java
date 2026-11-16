@@ -17,6 +17,9 @@ public class ShooterConstants {
     public static final double kHoodA = 0.0;
     public static final double kHoodG = 0.0;
 
-    public static final double hoodCurrentLimit = 0.0;
-    public static final double shooterCurrentLimit = 0.0;
+    public static final double hoodCurrentLimit = 0.0; // Amps
+    public static final int feederCurrentStallLimit = 40; // Amps
+
+    public static final double hoodMotorCruiseVelocity = 1.0; // m/s
+    public static final double hoodMotorAcceleration = 2.5; // m/s^2
 }
