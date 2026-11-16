@@ -50,7 +50,8 @@ public class RobotContainer {
 
   private void configureBindings() {
       controller.leftBumper()
-      .toggleOnTrue(m_spindexer.spindexerCommand()toggleOnTrue(m_Shooter.ShooterCommand()));
+      .toggleOnTrue(m_spindexer.spindexerCommand())
+      .toggleOnTrue(m_Shooter.ShooterCommand());
 
   }
 
